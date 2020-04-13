@@ -114,11 +114,11 @@ def key_scan():
         pass
     while not GPIO.input(key):
         time.sleep(0.01)
-	if not GPIO.input(key):
-	    time.sleep(0.01)
-	    while not GPIO.input(key):
-	        pass
-#delay 2s	
+        if not GPIO.input(key):
+            time.sleep(0.01)
+            while not GPIO.input(key):
+                pass
+#delay 2s
 time.sleep(2)
 
 #The try/except statement is used to detect errors in the try block.
@@ -128,12 +128,12 @@ try:
     key_scan()
     while True:
         run(1)
-	back(1)
-	left(2)
-	right(2)
-	spin_left(3)
-	spin_right(3)
-	brake(1)
+        back(1)
+        left(2)
+        right(2)
+        spin_left(3)
+        spin_right(3)
+        brake(1)
 except KeyboardInterrupt:
     pass
 pwm_ENA.stop()

@@ -1,4 +1,4 @@
-﻿#-*- coding:UTF-8 -*-
+#-*- coding:UTF-8 -*-
 import RPi.GPIO as GPIO
 import time
 
@@ -113,8 +113,8 @@ def key_scan():
         time.sleep(0.01)
         if not GPIO.input(key):
             time.sleep(0.01)
-	    while not GPIO.input(key):
-	        pass
+            while not GPIO.input(key):
+                pass
 
 #delay 2s	
 time.sleep(2)
@@ -135,7 +135,7 @@ try:
             time.sleep(0.002)
         elif LdrSersorRightValue == True and LdrSersorLeftValue == False:
             spin_right()      
-	    time.sleep(0.002)
+            time.sleep(0.002)
         elif LdrSersorRightValue == False and LdrSersorLeftValue == False :
             brake()          
        
