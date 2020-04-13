@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
-#Definition of  motor pin 
+#Definition of  motor pin
 IN1 = 20
 IN2 = 21
 IN3 = 19
@@ -37,7 +37,7 @@ def motor_init():
     pwm_ENA.start(0)
     pwm_ENB.start(0)
     GPIO.setup(key,GPIO.IN)
-	
+
 #advance
 def run(delaytime):
     GPIO.output(IN1, GPIO.HIGH)
@@ -138,4 +138,4 @@ except KeyboardInterrupt:
     pass
 pwm_ENA.stop()
 pwm_ENB.stop()
-GPIO.cleanup() 
+GPIO.cleanup()

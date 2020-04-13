@@ -25,7 +25,7 @@ def init():
     GPIO.setup(LED_B, GPIO.OUT)
     GPIO.setup(ServoPin, GPIO.OUT)
 
-#Define a pulse function to generate the PWM value in the analog mode. 
+#Define a pulse function to generate the PWM value in the analog mode.
 #The base pulse is 20ms, and the high level of the pulse is controlled at 0-180 degrees in 0.5-2.5ms.
 def servo_pulse(myangle):
     pulsewidth = (myangle * 11) + 500
@@ -34,7 +34,7 @@ def servo_pulse(myangle):
     GPIO.output(ServoPin, GPIO.LOW)
     time.sleep(20.0/1000-pulsewidth/1000000.0)
 
-	
+
 # The servo turns from 0-180, then turns from 180 to 0.
 #At the same time, the 180 degree angle is divided into 7 sections to represent 7 different colors.
 def corlor_light(pos):
@@ -70,18 +70,18 @@ def corlor_light(pos):
         GPIO.output(LED_R, GPIO.LOW)
 	GPIO.output(LED_G, GPIO.LOW)
 	GPIO.output(LED_B, GPIO.LOW)
-		
+
 def servo_control_color():
     for pos in range(181):
         servo_pulse(pos)
 	corlor_light(pos)
-	time.sleep(0.009) 
+	time.sleep(0.009)
     for pos in reversed(range(181)):
         servo_pulse(pos)
 	corlor_light(pos)
 	time.sleep(0.009)
 
-#delay 2s		
+#delay 2s
 time.sleep(2)
 
 #The try/except statement is used to detect errors in the try block.
@@ -90,7 +90,7 @@ try:
     init()
     while True:
  	servo_control_color()
-		
+
 except KeyboardInterrupt:
     pass
 GPIO.cleanup()

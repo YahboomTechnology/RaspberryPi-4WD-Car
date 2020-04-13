@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
-#Definition of  pin 
+#Definition of  pin
 IN1 = 20
 IN2 = 21
 IN3 = 19
@@ -43,7 +43,7 @@ def init():
     pwm_ENB = GPIO.PWM(ENB, 2000)
     pwm_ENA.start(0)
     pwm_ENB.start(0)
-	
+
 #Advance
 def run(leftspeed, rightspeed):
     GPIO.output(IN1, GPIO.HIGH)
@@ -61,7 +61,7 @@ def back(leftspeed, rightspeed):
     GPIO.output(IN4, GPIO.HIGH)
     pwm_ENA.ChangeDutyCycle(leftspeed)
     pwm_ENB.ChangeDutyCycle(rightspeed)
-	
+
 #turn left
 def left(leftspeed, rightspeed):
     GPIO.output(IN1, GPIO.LOW)
@@ -79,7 +79,7 @@ def right(leftspeed, rightspeed):
     GPIO.output(IN4, GPIO.LOW)
     pwm_ENA.ChangeDutyCycle(leftspeed)
     pwm_ENB.ChangeDutyCycle(rightspeed)
-	
+
 #turn left in place
 def spin_left(leftspeed, rightspeed):
     GPIO.output(IN1, GPIO.LOW)
@@ -115,7 +115,7 @@ def key_scan():
              time.sleep(0.01)
 	     while not GPIO.input(key):
 	         pass
-				
+
 #Ultrasonic function
 def Distance_test():
     GPIO.output(TrigPin,GPIO.HIGH)
@@ -130,7 +130,7 @@ def Distance_test():
     print "distance is %d " % (((t2 - t1)* 340 / 2) * 100)
     time.sleep(0.01)
     return ((t2 - t1)* 340 / 2) * 100
-	
+
 time.sleep(2)
 
 #The try/except statement is used to detect errors in the try block.
@@ -141,31 +141,31 @@ try:
     while True:
         distance = Distance_test()
 	if distance > 50:
-            run(100, 100)  
+            run(100, 100)
 	elif 30 <= distance <= 50:
-	    run(60, 60)    
+	    run(60, 60)
 	elif distance < 30:
 	    spin_right(85, 85)
-            time.sleep(0.35) 
+            time.sleep(0.35)
 	    brake()
             time.sleep(0.001)
-	    distance = Distance_test()  
+	    distance = Distance_test()
 	    if distance >= 30:
-	        run(60, 60)       
+	        run(60, 60)
 	    elif distance < 30:
 		spin_left(85, 85)
-		time.sleep(0.6)   
+		time.sleep(0.6)
 		brake()
                 time.sleep(0.001)
-		distance = Distance_test() 
+		distance = Distance_test()
 		if distance >= 30:
-	            run(60, 60)         
+	            run(60, 60)
 		elif distance < 30:
-		    spin_left(85, 85)   
+		    spin_left(85, 85)
 		    time.sleep(0.3)
 		    brake()
                     time.sleep(0.001)
-       
+
 except KeyboardInterrupt:
     pass
 pwm_ENA.stop()

@@ -62,18 +62,18 @@ def color_light(pos):
         GPIO.output(LED_R, GPIO.LOW)
         GPIO.output(LED_G, GPIO.LOW)
         GPIO.output(LED_B, GPIO.LOW)
-		
+
 def servo_control_color():
     for pos in range(181):
         pwm_servo.ChangeDutyCycle(2.5 + 10 * pos/180)
         color_light(pos)
-        time.sleep(0.009) 
+        time.sleep(0.009)
     for pos in reversed(range(181)):
         pwm_servo.ChangeDutyCycle(2.5 + 10 * pos/180)
         color_light(pos)
         time.sleep(0.009)
 
-#delay 2s		
+#delay 2s
 time.sleep(2)
 
 #The try/except statement is used to detect errors in the try block.
@@ -83,7 +83,7 @@ try:
     pwm_servo.ChangeDutyCycle(2.5 + 10 * 90/180)
     while True:
         servo_control_color()
-		
+
 except KeyboardInterrupt:
     pass
 pwm_servo.stop()

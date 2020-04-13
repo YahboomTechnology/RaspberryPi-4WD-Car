@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
-#Definition of  motor pin 
+#Definition of  motor pin
 IN1 = 20
 IN2 = 21
 IN3 = 19
@@ -103,7 +103,7 @@ def brake(delaytime):
     pwm_ENB.ChangeDutyCycle(50)
     time.sleep(delaytime)
 
-#Delay 2s	
+#Delay 2s
 time.sleep(2)
 
 #The try/except statement is used to detect errors in the try block.
@@ -124,5 +124,5 @@ except KeyboardInterrupt:
     pass
 pwm_ENA.stop()
 pwm_ENB.stop()
-GPIO.cleanup() 
+GPIO.cleanup()
 
