@@ -48,7 +48,7 @@ def init():
     pwm_ENB = GPIO.PWM(ENB, 2000)
     pwm_ENA.start(0)
     pwm_ENB.start(0)
-	
+
 #advance
 def run(leftspeed, rightspeed):
     GPIO.output(IN1, GPIO.HIGH)
@@ -66,8 +66,8 @@ def back(leftspeed, rightspeed):
     GPIO.output(IN4, GPIO.HIGH)
     pwm_ENA.ChangeDutyCycle(leftspeed)
     pwm_ENB.ChangeDutyCycle(rightspeed)
-	
-#turn left 
+
+#turn left
 def left(leftspeed, rightspeed):
     GPIO.output(IN1, GPIO.LOW)
     GPIO.output(IN2, GPIO.LOW)
@@ -84,7 +84,7 @@ def right(leftspeed, rightspeed):
     GPIO.output(IN4, GPIO.LOW)
     pwm_ENA.ChangeDutyCycle(leftspeed)
     pwm_ENB.ChangeDutyCycle(rightspeed)
-	
+
 #turn left in place
 def spin_left(leftspeed, rightspeed):
     GPIO.output(IN1, GPIO.LOW)
@@ -121,7 +121,7 @@ def key_scan():
 	    while not GPIO.input(key):
 	        pass
 
-#delay 2s	
+#delay 2s
 time.sleep(2)
 
 #The try/except statement is used to detect errors in the try block.
@@ -146,44 +146,44 @@ try:
         if (TrackSensorLeftValue1 == False or TrackSensorLeftValue2 == False) and  TrackSensorRightValue2 == False:
            spin_right(35, 35)
 	   time.sleep(0.08)
- 
+
         #4 tracking pins level status
-        # 0 X 0 0       
-        # 0 X 0 1 
-        # 0 X 1 0       
-       #Turn right in place,speed is 50,delay 80ms   
-       #Handle left acute angle and left right angle 
+        # 0 X 0 0
+        # 0 X 0 1
+        # 0 X 1 0
+       #Turn right in place,speed is 50,delay 80ms
+       #Handle left acute angle and left right angle
         elif TrackSensorLeftValue1 == False and (TrackSensorRightValue1 == False or  TrackSensorRightValue2 == False):
            spin_left(35, 35)
 	   time.sleep(0.08)
-  
+
         # 0 X X X
         #Left_sensor1 detected black line
         elif TrackSensorLeftValue1 == False:
            spin_left(35, 35)
-     
+
         # X X X 0
         #Right_sensor2 detected black line
         elif TrackSensorRightValue2 == False:
            spin_right(35, 35)
-   
+
         #4 tracking pins level status
         # X 0 1 X
         elif TrackSensorLeftValue2 == False and TrackSensorRightValue1 == True:
            left(0,40)
-   
+
         #4 tracking pins level status
-        # X 1 0 X  
+        # X 1 0 X
         elif TrackSensorLeftValue2 == True and TrackSensorRightValue1 == False:
            right(40, 0)
-   
+
         #4 tracking pins level status
         # X 0 0 X
         elif TrackSensorLeftValue2 == False and TrackSensorRightValue1 == False:
 	   run(45, 45)
-   
+
         #When the level of 4 pins are 1 1 1 1 , the car keeps the previous running state.
-       
+
 except KeyboardInterrupt:
     pass
 pwm_ENA.stop()

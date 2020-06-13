@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
-#Definition of  motor pin 
+#Definition of  motor pin
 IN1 = 20
 IN2 = 21
 IN3 = 19
@@ -37,7 +37,7 @@ def motor_init():
     pwm_ENA.start(0)
     pwm_ENB.start(0)
     GPIO.setup(key,GPIO.IN)
-	
+
 #advance
 def run(delaytime):
     GPIO.output(IN1, GPIO.HIGH)
@@ -114,11 +114,11 @@ def key_scan():
         pass
     while not GPIO.input(key):
         time.sleep(0.01)
-	if not GPIO.input(key):
-	    time.sleep(0.01)
-	    while not GPIO.input(key):
-	        pass
-#delay 2s	
+        if not GPIO.input(key):
+            time.sleep(0.01)
+            while not GPIO.input(key):
+                pass
+#delay 2s
 time.sleep(2)
 
 #The try/except statement is used to detect errors in the try block.
@@ -128,14 +128,14 @@ try:
     key_scan()
     while True:
         run(1)
-	back(1)
-	left(2)
-	right(2)
-	spin_left(3)
-	spin_right(3)
-	brake(1)
+        back(1)
+        left(2)
+        right(2)
+        spin_left(3)
+        spin_right(3)
+        brake(1)
 except KeyboardInterrupt:
     pass
 pwm_ENA.stop()
 pwm_ENB.stop()
-GPIO.cleanup() 
+GPIO.cleanup()

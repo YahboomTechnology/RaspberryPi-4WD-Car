@@ -1,8 +1,8 @@
-﻿#-*- coding:UTF-8 -*-
+#-*- coding:UTF-8 -*-
 import RPi.GPIO as GPIO
 import time
 
-#Definition of  motor pin 
+#Definition of  motor pin
 IN1 = 20
 IN2 = 21
 IN3 = 19
@@ -10,7 +10,7 @@ IN4 = 26
 ENA = 16
 ENB = 13
 
-#Definition of  button 
+#Definition of  button
 key = 8
 
 #Definition of photoresistor pin
@@ -43,7 +43,7 @@ def init():
     pwm_ENB = GPIO.PWM(ENB, 2000)
     pwm_ENA.start(0)
     pwm_ENB.start(0)
-	
+
 #advance
 def run():
     GPIO.output(IN1, GPIO.HIGH)
@@ -61,7 +61,7 @@ def back():
     GPIO.output(IN4, GPIO.HIGH)
     pwm_ENA.ChangeDutyCycle(50)
     pwm_ENB.ChangeDutyCycle(50)
-	
+
 #turn left
 def left():
     GPIO.output(IN1, GPIO.LOW)
@@ -79,7 +79,7 @@ def right():
     GPIO.output(IN4, GPIO.LOW)
     pwm_ENA.ChangeDutyCycle(50)
     pwm_ENB.ChangeDutyCycle(0)
-	
+
 #turn left in place
 def spin_left():
     GPIO.output(IN1, GPIO.LOW)
@@ -113,10 +113,10 @@ def key_scan():
         time.sleep(0.01)
         if not GPIO.input(key):
             time.sleep(0.01)
-	    while not GPIO.input(key):
-	        pass
+            while not GPIO.input(key):
+                pass
 
-#delay 2s	
+#delay 2s
 time.sleep(2)
 
 #The try/except statement is used to detect errors in the try block.
@@ -129,16 +129,16 @@ try:
         LdrSersorRightValue = GPIO.input(LdrSensorRight);
 
         if LdrSersorLeftValue == True and LdrSersorRightValue == True :
-            run()             
+            run()
         elif LdrSersorLeftValue == True and LdrSersorRightValue == False :
-            spin_left()       
+            spin_left()
             time.sleep(0.002)
         elif LdrSersorRightValue == True and LdrSersorLeftValue == False:
-            spin_right()      
-	    time.sleep(0.002)
+            spin_right()
+            time.sleep(0.002)
         elif LdrSersorRightValue == False and LdrSersorLeftValue == False :
-            brake()          
-       
+            brake()
+
 except KeyboardInterrupt:
     pass
 pwm_ENA.stop()

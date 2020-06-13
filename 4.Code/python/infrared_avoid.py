@@ -2,7 +2,7 @@
 import RPi.GPIO as GPIO
 import time
 
-#Definition of  motor pin 
+#Definition of  motor pin
 IN1 = 20
 IN2 = 21
 IN3 = 19
@@ -43,7 +43,7 @@ def init():
     pwm_ENB = GPIO.PWM(ENB, 2000)
     pwm_ENA.start(0)
     pwm_ENB.start(0)
-	
+
 #advance
 def run():
     GPIO.output(IN1, GPIO.HIGH)
@@ -61,7 +61,7 @@ def back():
     GPIO.output(IN4, GPIO.HIGH)
     pwm_ENA.ChangeDutyCycle(50)
     pwm_ENB.ChangeDutyCycle(50)
-	
+
 #turn left
 def left():
     GPIO.output(IN1, GPIO.LOW)
@@ -79,7 +79,7 @@ def right():
     GPIO.output(IN4, GPIO.LOW)
     pwm_ENA.ChangeDutyCycle(50)
     pwm_ENB.ChangeDutyCycle(0)
-	
+
 #turn left in place
 def spin_left():
     GPIO.output(IN1, GPIO.LOW)
@@ -114,7 +114,7 @@ def key_scan():
              time.sleep(0.01)
 	     while not GPIO.input(key):
 	         pass
-	
+
 time.sleep(2)
 
 #The try/except statement is used to detect errors in the try block.
@@ -129,17 +129,17 @@ try:
         RightSensorValue = GPIO.input(AvoidSensorRight);
 
         if LeftSensorValue == True and RightSensorValue == True :
-            run()     
+            run()
         elif LeftSensorValue == True and RightSensorValue == False :
-            spin_left()   
+            spin_left()
 	    time.sleep(0.002)
         elif RightSensorValue == True and LeftSensorValue == False:
-            spin_right()  
-            time.sleep(0.002)			
+            spin_right()
+            time.sleep(0.002)
         elif RightSensorValue == False and LeftSensorValue == False :
-            spin_right()  
+            spin_right()
 	    time.sleep(0.002)
-       
+
 except KeyboardInterrupt:
     pass
 pwm_ENA.stop()

@@ -48,5 +48,5 @@ try:
         GPIO.output(LED_B, GPIO.LOW)
         time.sleep(1)
 except:
-    print "except"
+    print("except")
 GPIO.cleanup()
