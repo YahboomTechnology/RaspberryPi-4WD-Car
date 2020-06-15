@@ -140,6 +140,7 @@ def key_scan():
 	        pass
 				
 #Ultrasonic function
+'''
 def Distance_test():
     GPIO.output(TrigPin,GPIO.HIGH)
     time.sleep(0.000015)
@@ -153,6 +154,47 @@ def Distance_test():
     print "distance is %d " % (((t2 - t1)* 340 / 2) * 100)
     time.sleep(0.01)
     return ((t2 - t1)* 340 / 2) * 100
+'''
+def Distance():
+    GPIO.output(TrigPin,GPIO.LOW)
+    time.sleep(0.000002)
+    GPIO.output(TrigPin,GPIO.HIGH)
+    time.sleep(0.000015)
+    GPIO.output(TrigPin,GPIO.LOW)
+
+    t3 = time.time()
+    while not GPIO.input(EchoPin):
+        t4 = time.time()
+        if (t4 - t3) > 0.03 :
+            return -1
+    t1 = time.time()
+    while GPIO.input(EchoPin):
+        t5 = time.time()
+        if(t5 - t1) > 0.03 :
+            return -1
+
+    t2 = time.time()
+    #print "distance is %d " % (((t2 - t1)* 340 / 2) * 100)
+    time.sleep(0.01)
+    return ((t2 - t1)* 340 / 2) * 100
+def Distance_test():
+    num = 0
+    ultrasonic = []
+    while num < 5:
+            distance = Distance()
+            while int(distance) == -1 :
+                distance = Distance()
+                print("Tdistance is %f"%(distance) )
+            while (int(distance) >= 500 or int(distance) == 0) :
+                distance = Distance()
+                print("Edistance is %f"%(distance) )
+            ultrasonic.append(distance)
+            num = num + 1
+            time.sleep(0.01)
+    print ultrasonic
+    distance = (ultrasonic[1] + ultrasonic[2] + ultrasonic[3])/3
+    print("distance is %f"%(distance) ) 
+    return distance
 	
 #The servo rotates to the specified angle
 def servo_appointed_detection(pos):
@@ -185,21 +227,21 @@ def servo_color_carstate():
         GPIO.output(LED_R, GPIO.HIGH)
         GPIO.output(LED_G, GPIO.LOW)
         GPIO.output(LED_B, GPIO.HIGH)
-        spin_right(35, 35)
+        spin_right(85, 85)
  	time.sleep(0.58)
     elif leftdistance >= rightdistance:
 	#Blue
 	GPIO.output(LED_R, GPIO.LOW)
         GPIO.output(LED_G, GPIO.LOW)
         GPIO.output(LED_B, GPIO.HIGH)
-	spin_left(35, 35)
+	spin_left(85, 85)
 	time.sleep(0.28)
     elif leftdistance <= rightdistance:
 	#Magenta
 	GPIO.output(LED_R, GPIO.HIGH)
         GPIO.output(LED_G, GPIO.LOW)
         GPIO.output(LED_B, GPIO.HIGH)
-	spin_right(35, 35)
+	spin_right(85, 85)
 	time.sleep(0.28)
 		
 #delay 2s	
@@ -219,17 +261,17 @@ try:
             RightSensorValue = GPIO.input(AvoidSensorRight)
 
             if LeftSensorValue == True and RightSensorValue == True :
-                run(50, 50)         
+                run(40, 40)         
             elif LeftSensorValue == True and RightSensorValue == False :
-                spin_left(35, 35)     
+                spin_left(30, 30)     
 		time.sleep(0.002)
             elif RightSensorValue == True and LeftSensorValue == False:
-                spin_right(35, 35)    
+                spin_right(30, 30)    
                 time.sleep(0.002)				
             elif RightSensorValue == False and LeftSensorValue == False :
-                spin_right(35, 35)    
+                spin_right(30, 30)    
 		time.sleep(0.002)
-		run(100, 100)
+		run(40, 40)
 		GPIO.output(LED_R, GPIO.LOW)
 	        GPIO.output(LED_G, GPIO.HIGH)
 	        GPIO.output(LED_B, GPIO.LOW)
@@ -240,17 +282,17 @@ try:
             RightSensorValue = GPIO.input(AvoidSensorRight)
 
             if LeftSensorValue == True and RightSensorValue == True :
-                run(50, 50)         
+                run(40, 40)         
             elif LeftSensorValue == True and RightSensorValue == False :
-                spin_left(35, 35)     
+                spin_left(30, 30)     
 		time.sleep(0.002)
             elif RightSensorValue == True and LeftSensorValue == False:
-                spin_right(35, 35)    
+                spin_right(30, 30)    
                 time.sleep(0.002)				
             elif RightSensorValue == False and LeftSensorValue == False :
-                spin_right(35, 35)    
+                spin_right(30, 30)    
 		time.sleep(0.002)
-		run(50, 50)
+		run(40, 40)
 	elif distance < 30:
 	    servo_color_carstate()
        
