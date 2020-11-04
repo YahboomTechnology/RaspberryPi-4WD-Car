@@ -19,8 +19,7 @@ Yahboom Raspberry Pi 4WD Smart Robot is specially designed for educators, studen
 
 [By on Yahboom website](https://category.yahboom.net/collections/rp-smart-robot/products/4wdrobot)
 
-# Download Method
-![](http://a1.qpic.cn/psb?/V12aIGgQ3D78BF/3Dc2WWfLYOcBgalankFHyS*OcMJD2yNyiT*WVqCymJA!/c/dIQAAAAAAAAA&ek=1&kp=1&pt=0&bo=3gO2AgAAAAADF1s!&tl=1&vuin=2448532184&tm=1567162800&sce=60-2-2&rf=newphoto&t=5)
+
 # Please Contact Us
 If you have any problem when using our robot after checking the tutorial, please contact us.
 
