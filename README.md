@@ -12,8 +12,6 @@ Yahboom Raspberry Pi 4WD Smart Robot is specially designed for educators, studen
 * This robot and Camera platform can be controlled by APP remote control by Android mobile. And the Raspberry Pi comes with a wireless network for real-time transmission of  HD video.
 
 # Required Best Buy Links
-[By on Amazon](https://www.amazon.com/Yahboom-Raspberry-Programmable-Electronics-%EF%BC%88Raspberry/dp/B07GJB7SWZ/ref=sr_1_6?m=A1N1A77RUX51FT&marketplaceID=ATVPDKIKX0DER&qid=1567147911&s=merchant-items&sr=1-6)
-
 [By on Yahboom website](https://category.yahboom.net/collections/rp-smart-robot/products/4wdrobot)
 
 # Please Contact Us
