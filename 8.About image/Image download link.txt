@@ -1,9 +1,7 @@
-Image Download Link:
-Old image:  https://drive.google.com/drive/folders/1jV_778pITbqQ-mBZzoAlUHDfNzacvZ2V
-New image:  https://drive.google.com/drive/folders/1vjkRQAx1uYUddSFahK285ObTHpHkivYE
+New image link：
+https://drive.google.com/drive/folders/1uMA9zROJXGOk-Sm9afbHhkknPfrNtSao?usp=sharing
+
 
 System login :
 user name: pi 
 Password: yahboom
-
-
