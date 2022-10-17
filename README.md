@@ -11,7 +11,7 @@ Yahboom Raspberry Pi 4WD Smart Robot is specially designed for educators, studen
 * Users can use C language programming and Python programming.
 * This robot and Camera platform can be controlled by APP remote control by Android mobile. And the Raspberry Pi comes with a wireless network for real-time transmission of  HD video.
 
-# Required Best Buy Links
+# More Details
 [By on Yahboom website](https://category.yahboom.net/collections/rp-smart-robot/products/4wdrobot)
 
 # Please Contact Us
