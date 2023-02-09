@@ -1,18 +1,22 @@
-# Raspberry Pi 4WD Car
-![](https://github.com/YahboomTechnology/RaspberryPi-4WD-Car/blob/master/Yahboom_Pi4WD.png)
+# Yahboom Electric Camera Platform
+![](https://github.com/YahboomTechnology/Camera-PTZ/blob/main/Camera-PTZ.jpg)
 # Introduction
-Yahboom Raspberry Pi 4WD Smart Robot is specially designed for educators, students, and Raspberry Pi enthusiasts. Most of the components are connected with screw, copper pillar and anti-reverse socket, which is the same as our other smart robots. The difference for our 4WD robot is that we use the latest Raspberry Pi 4B board as the core controller and HD camera with two degrees of freedom. Through the 5G WIFI network of Raspberry Pi, the real-time transmission of HD video can be realized. Coupled with the high-quality Bluetooth 4.0 module, so we can control car by Android/iOS mobile APP. In addition, we have created a series of AI visual gameplay based on OpenCV, such as face detection, color tracking, gesture recognition, object detection, etc. Users can not only learn about the robot car with our robot kit but study the Raspberry Pi 4B board included in this product separately. We can match it with a mouse and a keyboard to form a microcomputer, plus various sensor modules and communication modules so that you can create more possibilities.
+This collection includes three kinds of camera platform, all of which are made of aluminum alloy and 9G metal digital steering gear. Suitable holes are reserved to support the installation of screws and copper columns, which can be used on the smart car for automatic driving and visual recognition.
 # Features
-* This robot kit is easy to assemble and features aluminum alloy chassis, powerful four-drive motors, metal motor mount, and High-quality battery.
-* BST-4WD multi-functional expansion board is equipped with interfaces of various sensors and communication modules, and it is compatible with four core controllers: Arduino UNO, 51 controllers, STM32 and Raspberry Pi.
-* It supports multiple functions: Intelligent light seeking, Tracking, Ultrasonic obstacle avoidance, Fan outfire, etc.
-* It supports multiple AI functions: Face detection, color tracking, object/gesture/QR code recognition etc.
-* Some holes are reserved in the external structure for users to expand by themselves.
-* Users can use C language programming and Python programming.
-* This robot and Camera platform can be controlled by APP remote control by Android mobile. And the Raspberry Pi comes with a wireless network for real-time transmission of  HD video.
+* Basic version platform
+
+It has two degrees of freedom and can rotate 0-180° horizontally and vertically. It is equipped with a USB high-definition drive-free camera, with a 120° angle of view, 120PFS pixels and 2MP pixels. Small size can effectively save installation space.
+
+* Advanced version platform
+
+It has two degrees of freedom and industrial grade deep groove ball bearing. It can rotate 0-180° horizontally and vertically, with USB high-definition drive-free camera, 120° angle of view, 120PFS pixels, 2MP pixels. With high brightness searchlight, it is suitable for dark environment.
+
+* Depth camera version platform
+
+One degrees of freedom, the horizontal direction can be turned 0-180°, and the vertical direction can only be slightly adjusted manually. Specially designed for Astra Pro depth camera.
 
 # More Details
-[Click here](https://category.yahboom.net/collections/rp-smart-robot/products/4wdrobot)
+[Click here](https://category.yahboom.net/products/camera-ptz)
 
 # Please Contact Us
 If you have any problem when using our robot after checking the tutorial, please contact us.
