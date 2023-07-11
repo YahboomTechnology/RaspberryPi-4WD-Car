@@ -6,7 +6,7 @@ Yahboom Raspberry Pi 4WD Smart Robot is specially designed for educators, studen
 * This robot kit is easy to assemble and features aluminum alloy chassis, powerful four-drive motors, metal motor mount, and High-quality battery.
 * BST-4WD multi-functional expansion board is equipped with interfaces of various sensors and communication modules, and it is compatible with four core controllers: Arduino UNO, 51 controllers, STM32 and Raspberry Pi.
 * It supports multiple functions: Intelligent light-seeking, Tracking, Ultrasonic obstacle avoidance, turn off the fire with a fan, etc.
-* It supports multiple AI functions: Face detection, color tracking, object/gesture/QR code recognition etc.
+* It supports multiple AI functions: Face detection, color tracking, object/QR code recognition etc.
 * Some holes are reserved in the external structure for users to expand by themselves.
 * Users can use C language programming and Python programming.
 * This robot and camera platform can be controlled by APP remote control by Android/iOS mobile. And the Raspberry Pi comes with 5G WIFI for real-time transmission of  HD video.
